@@ -1,0 +1,97 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-hero {
+  margin-bottom: 4rem;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 0 0 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.experience, .education {
+  margin-bottom: 3rem;
+}
+
+.experience h2, .education h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.experience-item, .education-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--secondary-bg);
+}
+
+.experience-item:last-child, .education-item:last-child {
+  border-bottom: none;
+}
+
+.experience-item h3, .education-item h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #61dafb;
+}
+
+.company {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.experience-item ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.experience-item li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    flex: 0 0 auto;
+    margin-bottom: 2rem;
+    width: 200px;
+    align-self: center;
+  }
+}

@@ -1,0 +1,141 @@
+import { useState } from 'react';
+import './Contact.css';
+
+function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    error: false,
+    message: ''
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // In a real application, you would send this data to your backend
+    // For now, we'll just simulate a successful submission
+    
+    setFormStatus({
+      submitted: true,
+      error: false,
+      message: 'Thank you for your message! I will get back to you soon.'
+    });
+    
+    // Reset form after successful submission
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    
+    // In a real app, you would handle errors too
+    // if error: setFormStatus({ submitted: true, error: true, message: 'An error occurred. Please try again.' });
+  };
+
+  return (
+    <div className="contact-container">
+      <h1>Contact Me</h1>
+      <p className="contact-intro">Have a question or want to work together? Feel free to reach out!</p>
+      
+      <div className="contact-content">
+        <div className="contact-info">
+          <div className="contact-item">
+            <h3>Email</h3>
+            <p>your.email@example.com</p>
+          </div>
+          
+          <div className="contact-item">
+            <h3>Location</h3>
+            <p>Your City, Country</p>
+          </div>
+          
+          <div className="contact-item">
+            <h3>Social</h3>
+            <div className="contact-social">
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="contact-form">
+          {formStatus.submitted ? (
+            <div className={`form-status ${formStatus.error ? 'error' : 'success'}`}>
+              {formStatus.message}
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  value={formData.name} 
+                  onChange={handleChange} 
+                  required 
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  value={formData.email} 
+                  onChange={handleChange} 
+                  required 
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  value={formData.subject} 
+                  onChange={handleChange} 
+                  required 
+                />
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  value={formData.message} 
+                  onChange={handleChange} 
+                  rows="5" 
+                  required 
+                ></textarea>
+              </div>
+              
+              <button type="submit" className="submit-btn">Send Message</button>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Contact;
