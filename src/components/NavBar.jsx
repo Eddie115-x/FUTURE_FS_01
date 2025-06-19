@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import ThemeToggle from './ThemeToggle';
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,10 +15,13 @@ function NavBar() {
       <div className="navbar-logo">
         <Link to="/">Adrian Obadiah</Link>
       </div>
-      <div className="hamburger-menu" onClick={toggleMenu}>
-        <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
-        <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
-        <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
+      <div className="navbar-actions">
+        <ThemeToggle />
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
+          <div className={`hamburger-bar ${isMenuOpen ? 'open' : ''}`}></div>
+        </div>
       </div>
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>

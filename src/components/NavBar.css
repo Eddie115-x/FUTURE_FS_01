@@ -80,6 +80,11 @@
   transition: all 0.3s ease;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .hamburger-menu {
     display: flex;

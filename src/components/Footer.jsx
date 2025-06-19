@@ -7,13 +7,10 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} Adrian Oxley Obadiah. All rights reserved.</p>
         <div className="social-links">
           <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            GitHub
+            <img src="/assets/github.png" alt="GitHub" className="footer-social-icon" />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-            Twitter
+          <a href="https://www.linkedin.com/in/adrian-obadiah-5682822ba/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/linkedin.png" alt="LinkedIn" className="footer-social-icon" />
           </a>
         </div>
       </div>

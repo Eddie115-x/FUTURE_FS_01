@@ -30,6 +30,20 @@
   color: var(--color-accent);
 }
 
+.footer-social-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.2s, transform 0.2s;
+  vertical-align: middle;
+}
+
+.footer-social-icon:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
