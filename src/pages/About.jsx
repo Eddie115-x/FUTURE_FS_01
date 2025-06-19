@@ -1,5 +1,3 @@
-
-import React from 'react';
 import './About.css';
 
 function About() {
@@ -21,6 +19,13 @@ function About() {
               Over the past two years, I’ve worked on various academic and personal projects, including mobile applications and websites.
               Every challenge has been a learning curve — and this portfolio is proof that I’m moving in the right direction.
             </p>
+            <a
+              href="/assets/cv doc.pdf"
+              download
+              className="download-cv-btn"
+            >
+              Download My CV
+            </a>
           </div>
         </div>
       </div>
