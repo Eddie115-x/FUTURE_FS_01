@@ -4,12 +4,19 @@ function Home() {
   return (
     <div className="home-container">
       <section className="hero">
-        <h1>Hi, I'm Adrian Obadiah</h1>
-        <h2>Frontend Developer</h2>
-        <p>I build responsive websites and web applications.</p>
-        <div className="hero-buttons">
-          <a href="#projects" className="btn primary-btn">View My Work</a>
-          <a href="/contact" className="btn secondary-btn">Contact Me</a>
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Hi, I'm Adrian Obadiah</h1>
+            <h2>Frontend Developer</h2>
+            <p>I build responsive websites and web applications.</p>
+            <div className="hero-buttons">
+              <a href="#projects" className="btn primary-btn">View My Work</a>
+              <a href="/contact" className="btn secondary-btn">Contact Me</a>
+            </div>
+          </div>
+          <div className="hero-image">
+            <img src="/assets/profile-pic.png" alt="Profile" className="floating-profile" />
+          </div>
         </div>
       </section>
       

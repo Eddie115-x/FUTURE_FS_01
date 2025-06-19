@@ -40,7 +40,7 @@
 }
 
 .project-info p {
-  color: #666;
+  color: var(--color-text-primary); /* Black in light mode, white in dark mode */
   margin-bottom: 1.5rem;
 }
 
