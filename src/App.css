@@ -2,8 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-weight: 300; /* Setting a lighter default font weight for the entire app */
+  width: 100%;
+  max-width: 100%; /* Ensure app doesn't exceed viewport width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main-content {
   flex: 1;
+  width: 100%;
+  max-width: none; /* Remove any max-width constraints */
 }

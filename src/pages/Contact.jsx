@@ -55,21 +55,20 @@ function Contact() {
       <div className="contact-content">
         <div className="contact-info">
           <div className="contact-item">
-            <h3>Email</h3>
+            <h3>EMAIL</h3>
             <p>your.email@example.com</p>
           </div>
           
           <div className="contact-item">
-            <h3>Location</h3>
-            <p>Your City, Country</p>
+            <h3>LOCATION</h3>
+            <p>Suva, Fiji  Honiara, Solomon Islands</p>
           </div>
           
           <div className="contact-item">
             <h3>Social</h3>
             <div className="contact-social">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a href="https://github.com/Eddie115-x" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="www.linkedin.com/in/adrian-obadiah" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
