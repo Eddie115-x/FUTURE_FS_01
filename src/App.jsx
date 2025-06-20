@@ -3,12 +3,10 @@ import './App.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import { ThemeProvider } from './contexts/ThemeContext';
-import About from './pages/About';
 import Blog from './pages/Blog';
 import ChangeLog from './pages/ChangeLog';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
 
 function App() {
   return (
@@ -19,8 +17,6 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/changelog" element={<ChangeLog />} />
