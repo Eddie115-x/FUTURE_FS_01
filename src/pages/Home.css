@@ -4,13 +4,58 @@
   padding: 0 2rem;
 }
 
+/* Hero Section */
 .hero {
-  height: 80vh;
+  min-height: 85vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 4rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.floating-profile {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  animation: floating 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .hero h1 {
@@ -61,8 +106,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Common section styles */
 section {
   margin-bottom: 4rem;
+  scroll-margin-top: 80px; /* For smooth scrolling with fixed header */
 }
 
 section h2 {
@@ -76,10 +123,7 @@ section p {
   margin-bottom: 2rem;
 }
 
-.featured-projects {
-  padding: 2rem 0;
-}
-
+/* Skills section */
 .skills {
   padding: 2rem 0;
 }
@@ -122,12 +166,144 @@ section p {
   color: var(--accent);
 }
 
+/* About section */
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 0 0 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.download-cv-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.download-cv-btn:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects section */
+.projects-section {
+  padding: 4rem 0;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.projects-intro {
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Scroll Down Icon */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-down img {
+  width: 40px;
+  height: auto;
+  filter: brightness(80%);
+  animation: bounce 2s infinite;
+}
+
+.scroll-down:hover img {
+  filter: brightness(100%);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
   .hero {
     height: auto;
-    padding: 4rem 0;
-    align-items: center;
+    padding: 2rem 0 4rem;
+  }
+  
+  .hero-content {
+    flex-direction: column-reverse;
     text-align: center;
+    gap: 2rem;
+  }
+  
+  .hero-image {
+    margin-bottom: 1rem;
+  }
+  
+  .floating-profile {
+    width: 220px;
+    height: 220px;
   }
   
   .hero h1 {
@@ -136,5 +312,22 @@ section p {
   
   .hero h2 {
     font-size: 1.8rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image {
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }

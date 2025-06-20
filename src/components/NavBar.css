@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 30px 0; /* Updated padding from the new style */
   background-color: var(--color-surface);
   color: var(--color-text-primary);
   position: relative;
@@ -12,9 +12,11 @@
 
 .navbar-logo a {
   color: var(--color-text-primary);
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 25px; /* Updated from new style */
+  font-weight: 200; /* Updated from new style */
   text-decoration: none;
+  margin-left: 2rem; /* Added from new style */
+  letter-spacing: .1rem; /* Added from new style */
 }
 
 .navbar-links {
@@ -83,6 +85,7 @@
 .navbar-actions {
   display: flex;
   align-items: center;
+  margin-right: 2rem; /* Added from new style */
 }
 
 @media (max-width: 768px) {
