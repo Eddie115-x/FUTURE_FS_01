@@ -32,7 +32,7 @@ function NavBar() {
       <div className="navbar-logo">
         <Link to="/" className="logo-link">
           <img src="/assets/logo.png" alt="Adrian Obadiah Logo" className="logo-image" />
-          <span className="logo-slogan">Edz Digicraft</span>
+          <span className="logo-slogan">Adrian Obadiah</span>
         </Link>
       </div>
       <div className="navbar-actions">
@@ -44,10 +44,8 @@ function NavBar() {
         </div>
       </div>
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-        <li><a href="#about" onClick={() => scrollToSection('about')}>About</a></li>
-        <li><a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
-        <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
+        <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Hello</Link></li>
+        <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Articles</Link></li>
         <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
         <li><Link to="/changelog" onClick={() => setIsMenuOpen(false)}>Change Log</Link></li>
       </ul>

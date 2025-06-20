@@ -24,7 +24,7 @@
   transition: transform 0.3s ease;
 }
 
-.navbar-logo a {
+.navbar-logo {
   display: flex;
   align-items: center;
   text-decoration: none;

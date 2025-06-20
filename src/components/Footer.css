@@ -4,34 +4,52 @@
 .footer {
   background-color: var(--color-surface);
   color: var(--color-text-secondary);
-  padding: 1.15em 1em .7em;  /* Updated padding from new style */
+  padding: 1.15em 1em .7em;
   margin-top: 2rem;
   border-top: 1px solid var(--color-border);
-  font-size: 0.9rem;  /* From new style */
-  font-weight: 200;  /* From new style */
+  font-size: 0.9rem;
+  font-weight: 200;
+  min-height: 70px; /* Ensure minimum height for footer */
+  width: 100%; /* Full width */
+  position: relative; /* Ensure proper positioning context */
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   padding: 0 2rem;
+  width: 100%;
+  min-height: 100%; /* Ensure content takes full height */
 }
 
 /* Copyright section styling */
+.copyright {
+  flex: 0 1 auto; /* Don't stretch, but allow shrinking */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the far left */
+  margin-right: auto; /* Push to the left */
+  padding-right: 1rem; /* Space between copyright and links */
+}
+
 .footer-content p {
-  margin-bottom: 0;  /* From new style */
-  padding: 10px 0;   /* From new style */
-  color: #454545;    /* From new style, can be replaced with var(--color-text-secondary) if needed */
+  margin-bottom: 0;
+  padding: 10px 0;
+  color: #454545;
+  white-space: nowrap; /* Prevent text wrapping on narrow screens */
 }
 
 /* Social links styling */
 .social-links {
+  flex: 0 1 auto; /* Don't stretch, but allow shrinking */
   display: flex;
+  justify-content: flex-end; /* Align to the far right */
   gap: 1.5rem;
-  padding: 0;  /* From new style */
+  padding: 0;
+  margin-left: auto; /* Push to the right */
 }
 
 .social-links a {
@@ -62,14 +80,87 @@
   transform: scale(1.1);
 }
 
+/* Standard laptop screens (including 15.6-inch with 16:9 ratio - approximately 1366x768 to 1920x1080) */
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .footer {
+    padding: 1rem 2rem; /* Adjusted padding for standard laptops */
+  }
+  
+  .footer-content {
+    padding: 0 1rem; /* Slightly reduced side padding */
+  }
+  
+  .copyright {
+    padding-left: 0.5rem; /* Keep left-aligned, but with less padding */
+  }
+  
+  .social-links {
+    padding-right: 0.5rem; /* Keep right-aligned, but with less padding */
+  }
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 1023px) {
+  .footer-content {
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .copyright {
+    justify-content: center;
+    margin-right: 0;
+    padding-right: 0;
   }
   
   .social-links {
     justify-content: center;
+    margin-left: 0;
+  }
+}
+
+/* Specific optimization for 16:9 aspect ratio screens (common in 15.6-inch laptops) */
+@media screen and (min-aspect-ratio: 16/9) {
+  .footer {
+    padding: 1.15em 1.5em 0.7em; /* Adjusted padding for 16:9 ratio */
+  }
+  
+  .copyright, .social-links {
+    flex-basis: auto; /* Allow natural width */
+    min-width: 0; /* Allow shrinking if needed */
+  }
+  
+  /* Ensure extreme positioning for 16:9 screens */
+  .copyright {
+    margin-right: auto;
+    padding-right: 2rem;
+  }
+  
+  .social-links {
+    margin-left: auto;
+  }
+}
+
+/* For very large screens, ensure content doesn't stretch too wide */
+@media (min-width: 1921px) {
+  .footer-content {
+    max-width: 1400px;
+    padding: 0 4rem;
+  }
+  
+  .copyright {
+    padding-left: 2rem;
+  }
+  
+  .social-links {
+    padding-right: 2rem;
   }
 }

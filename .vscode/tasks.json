@@ -2,11 +2,11 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Start Development Server",
+			"label": "Start development server",
 			"type": "shell",
-			"command": "cd ${workspaceFolder} && npm start",
-			"group": "none",
+			"command": "npm start",
 			"isBackground": true,
+			"group": "none",
 			"problemMatcher": []
 		}
 	]

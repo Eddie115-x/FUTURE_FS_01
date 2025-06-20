@@ -34,8 +34,8 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <section className="hero">
+      {/* Personal Profile */}
+      <section className="Personal_Profile" id="home">
         <div className="profile-container">
           <img src="/assets/profile-pic.png" alt="Profile" className="profile-pic" />
         </div>
@@ -44,24 +44,14 @@ function Home() {
             <h1>Hi, I'm Adrian Obadiah</h1>
             <h2>Full Stack Developer</h2>
             <p>I build responsive websites and web applications.</p>
-            <div className="hero-buttons">
-              <a href="#projects" className="btn primary-btn">View My Work</a>
-              <a href="#contact" className="btn secondary-btn">Contact Me</a>
-            </div>
           </div>
-        </div>
-        {/* Scroll Down Icon */}
-        <div className="scroll-down text-center">
-          <a href="#about">
-            <img src="https://images.squarespace-cdn.com/content/v1/52574f61e4b03a8237e53088/1569695596518-RWV6J1VEKTAOMZA4BSX0/image-asset.png?format=100w" alt="Scroll Down" />
-          </a>
         </div>
       </section>
       
       {/* About Section */}
       <section className="about-section" id="about">
         <div className="about-container" data-aos="fade-up">
-          <h2 className="about-title">About Me</h2>
+          <h2 className="about-title">Get to know me more...</h2>
           <div className="about-content">
             <img
               src="/assets/about-pic.png"
@@ -90,14 +80,13 @@ function Home() {
       
       {/* Skills Section */}
       <section className="skills">
-        <h2>My Skills</h2>
+        <h2>Tech Stack</h2>
         <div className="skills-container">
           <div className="skill-category">
             <h3>Frontend</h3>
             <ul>
               <li>HTML5</li>
               <li>CSS3</li>
-              <li>JavaScript</li>
               <li>React</li>
               <li>Bootstrap</li>
             </ul>
@@ -110,6 +99,7 @@ function Home() {
               <li>Express</li>
               <li>MongoDB</li>
               <li>Firebase</li>
+              <li>JavaScript</li>
             </ul>
           </div>
         </div>
