@@ -50,6 +50,12 @@ function Home() {
             <img src="/assets/profile-pic.png" alt="Profile" className="floating-profile" />
           </div>
         </div>
+        {/* Scroll Down Icon */}
+        <div className="scroll-down text-center">
+          <a href="#about">
+            <img src="https://images.squarespace-cdn.com/content/v1/52574f61e4b03a8237e53088/1569695596518-RWV6J1VEKTAOMZA4BSX0/image-asset.png?format=100w" alt="Scroll Down" />
+          </a>
+        </div>
       </section>
       
       {/* About Section */}

@@ -2,10 +2,12 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer nav-footer">
       <div className="footer-content">
-        <p>&copy; {new Date().getFullYear()} Adrian Oxley Obadiah. All rights reserved.</p>
-        <div className="social-links">
+        <div className="copyright">
+          <p>&copy; {new Date().getFullYear()} Adrian Oxley Obadiah. All rights reserved.</p>
+        </div>
+        <div className="social-links socials">
           <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
             <img src="/assets/github.png" alt="GitHub" className="footer-social-icon" />
           </a>

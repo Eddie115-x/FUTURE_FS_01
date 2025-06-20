@@ -1,9 +1,14 @@
+/* 
+ * Footer styling with nav-footer inspired styles
+ */
 .footer {
   background-color: var(--color-surface);
   color: var(--color-text-secondary);
-  padding: 2rem 0;
+  padding: 1.15em 1em .7em;  /* Updated padding from new style */
   margin-top: 2rem;
   border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;  /* From new style */
+  font-weight: 200;  /* From new style */
 }
 
 .footer-content {
@@ -15,19 +20,32 @@
   padding: 0 2rem;
 }
 
+/* Copyright section styling */
+.footer-content p {
+  margin-bottom: 0;  /* From new style */
+  padding: 10px 0;   /* From new style */
+  color: #454545;    /* From new style, can be replaced with var(--color-text-secondary) if needed */
+}
+
+/* Social links styling */
 .social-links {
   display: flex;
   gap: 1.5rem;
+  padding: 0;  /* From new style */
 }
 
 .social-links a {
   color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 0.3s;
+  margin-right: .5rem;  /* From new style */
+  padding: 10px 0;      /* From new style */
 }
 
 .social-links a:hover {
   color: var(--color-accent);
+  text-decoration: none;  /* From new style */
+  /* Keep the existing hover effect for icons but add border for text links if needed */
 }
 
 .footer-social-icon {
@@ -48,9 +66,10 @@
   .footer-content {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
   
   .social-links {
-    margin-top: 1rem;
+    justify-content: center;
   }
 }
