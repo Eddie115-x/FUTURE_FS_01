@@ -10,13 +10,33 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.logo-image {
+  height: 60px;  /* Increased size */
+  width: auto;
+  border-radius: 0;  /* Square shape */
+  object-fit: contain; /* Maintain aspect ratio without cropping */
+  transition: transform 0.3s ease;
+}
+
 .navbar-logo a {
-  color: var(--color-text-primary);
-  font-size: 25px; /* Updated from new style */
-  font-weight: 200; /* Updated from new style */
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  margin-left: 2rem; /* Added from new style */
-  letter-spacing: .1rem; /* Added from new style */
+  color: var(--color-text-primary);
+}
+
+.logo-slogan {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-left: 12px;
+  letter-spacing: 0.05rem;
+  color: var(--color-text-primary);
 }
 
 .navbar-links {
@@ -93,6 +113,18 @@
     display: flex;
   }
   
+  .navbar-logo {
+    margin-left: 1rem;
+  }
+  
+  .logo-image {
+    height: 50px; /* Still relatively large on mobile */
+  }
+  
+  .logo-slogan {
+    font-size: 1.2rem;
+  }
+  
   .navbar-links {
     position: absolute;
     top: 100%;
@@ -143,5 +175,29 @@
   
   .hamburger-bar.open:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* Small screen styles */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 20px 0;
+  }
+  
+  .navbar-logo {
+    margin-left: 0.75rem;
+  }
+  
+  .logo-image {
+    height: 45px; /* Still relatively large on small screens */
+  }
+  
+  .logo-slogan {
+    font-size: 1rem;
+    margin-left: 8px;
+  }
+  
+  .navbar-actions {
+    margin-right: 0.75rem;
   }
 }

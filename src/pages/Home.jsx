@@ -8,8 +8,8 @@ function Home() {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Website',
-      description: 'A fully responsive e-commerce website built with React, Redux, and Firebase. Features include user authentication, product filtering, cart functionality, and payment processing.',
+      title: 'E-Portfolio Website',
+      description: 'A fully responsive personal e-portfolio website built with React, css, html, java. Features include .',
       imageUrl: '/assets/project-1.png',
       projectUrl: 'https://project1.example.com',
       githubUrl: 'https://github.com/yourusername/project1'
@@ -36,18 +36,18 @@ function Home() {
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero">
+        <div className="profile-container">
+          <img src="/assets/profile-pic.png" alt="Profile" className="profile-pic" />
+        </div>
         <div className="hero-content">
           <div className="hero-text">
             <h1>Hi, I'm Adrian Obadiah</h1>
-            <h2>Frontend Developer</h2>
+            <h2>Full Stack Developer</h2>
             <p>I build responsive websites and web applications.</p>
             <div className="hero-buttons">
               <a href="#projects" className="btn primary-btn">View My Work</a>
               <a href="#contact" className="btn secondary-btn">Contact Me</a>
             </div>
-          </div>
-          <div className="hero-image">
-            <img src="/assets/profile-pic.png" alt="Profile" className="floating-profile" />
           </div>
         </div>
         {/* Scroll Down Icon */}

@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
   /* Light Theme (Default) */
   --color-bg: #FAFAFA;
   --color-surface: #FFFFFF;
   --color-text-primary: #000000; /* Pure black text */
-  --color-text-secondary: #000000; /* Also black text */
+  --color-text-secondary: #454545; /* Dark gray text for secondary elements */
   --color-accent: #4F46E5;
   --color-accent-hover: #6366F1;
   --color-border: #E5E7EB;
@@ -28,7 +29,7 @@ body[data-theme='dark'] {
   --color-bg: #121212;
   --color-surface: #1E1E1E;
   --color-text-primary: #FFFFFF; /* Pure white text */
-  --color-text-secondary: #FFFFFF; /* Also white text */
+  --color-text-secondary: #CCCCCC; /* Light gray text for secondary elements */
   --color-accent: #4F46E5;
   --color-accent-hover: #6366F1;
   --color-border: #333333;
@@ -55,67 +56,101 @@ body[data-theme='dark'] {
 body {
   background-color: var(--color-bg);
   color: var(--color-text-primary);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', 'Poppins', sans-serif; /* Added DM Sans as primary font */
   scroll-behavior: smooth;
+  font-weight: 300; /* Default to lighter weight for better readability */
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
 }
 
+/* Typography utilities */
+.lead {
+  font-weight: 100;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+.text-light {
+  font-weight: 200;
+}
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 600;
+}
+
+.text-bold {
+  font-weight: 800;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+/* Link styling */
 a {
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-  font-weight: bold; /* Use bold on hover instead of color change */
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-text-primary);
 }
 
+/* Container for main content */
+.container-content {
+  padding: 185px 30px;
+}
+
+/* Button styling */
 .btn {
   border: none;
   border-radius: 5px;
   padding: 0.75rem 1.5rem;
   cursor: pointer;
-  font-weight: 500;
-  background-color: #E0E0E0; /* Light gray background */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  transition: all 0.2s ease-in-out;
-  border: 1px solid var(--color-text-primary);
+  font-weight: 300;
+  background-color: #E0E0E0;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--color-border);
 }
 
 .btn:hover {
-  background-color: #D0D0D0; /* Slightly darker gray on hover */
-  font-weight: bold;
+  background-color: #D0D0D0;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-color-1 {
-  background-color: #E0E0E0; /* Light gray background */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  transition: all 0.3s ease-in-out;
-  border: 1px solid var(--color-text-primary);
+.btn-dark {
+  font-weight: 300;
+  background-color: #23272b;
+  border-color: #1d2124;
+  color: #fff;
 }
 
-.btn-color-1:hover {
-  background-color: #D0D0D0; /* Slightly darker gray on hover */
-  font-weight: bold;
+.btn-dark:hover {
+  background-color: #343a40;
+  border-color: #343a40;
 }
 
-.btn-color-2 {
-  background-color: transparent;
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  border: 2px solid var(--color-text-primary); /* Border matches text color */
-  transition: all 0.3s ease-in-out;
+.btn-lg {
+  padding: 0.8em 1.8em;
+  font-size: 1rem;
 }
 
-.btn-color-2:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Light background in light mode */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  font-weight: bold;
+.btn:focus, button:focus {
+  outline: none;
 }
 
-/* Utility classes for the new color scheme */
+/* Card styling */
 .card {
   background-color: var(--color-surface);
   border-radius: 8px;
@@ -124,13 +159,14 @@ a:hover {
   border: 1px solid var(--color-border);
 }
 
+/* Section styling */
 .section {
   padding: 4rem 0;
 }
 
-.section-alt {
-  background-color: var(--color-muted);
-  padding: 4rem 0;
+.section-break {
+  height: 100px;
+  padding: 15px 0;
 }
 
 .container {
@@ -146,38 +182,46 @@ a:hover {
   width: 100%;
 }
 
-.text-accent {
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  font-weight: bold; /* Using bold instead of accent color */
+/* Responsive utilities */
+@media (min-width: 1200px) {
+  .btn-lg {
+    padding: 1em 2.5em;
+    line-height: 1.1em;
+    font-size: 1.1rem;
+  }
 }
 
-.badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background-color: var(--color-muted);
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  border: 1px solid var(--color-text-primary);
+@media (max-width: 1199px) {
+  .lead {
+    font-size: 1.55rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
 }
 
-.badge-success {
-  background-color: #E0E0E0; /* Light gray background */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  border: 1px solid var(--color-text-primary);
+@media (max-width: 767px) {
+  .container-content {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  }
 }
 
-.badge-warning {
-  background-color: #E0E0E0; /* Light gray background */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  font-style: italic;
-  border: 1px solid var(--color-text-primary);
-}
-
-.badge-error {
-  background-color: #E0E0E0; /* Light gray background */
-  color: var(--color-text-primary); /* Black in light mode, white in dark */
-  font-weight: bold;
-  border: 1px solid var(--color-text-primary);
+@media (max-width: 576px) {
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+  
+  .btn-lg {
+    padding: 0.8em 1.5em;
+    line-height: 1.25em;
+    font-size: 0.85rem;
+  }
+  
+  .flex-xs-fill {
+    -ms-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+  }
 }

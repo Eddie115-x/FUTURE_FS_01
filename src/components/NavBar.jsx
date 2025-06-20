@@ -30,7 +30,10 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Adrian Obadiah</Link>
+        <Link to="/" className="logo-link">
+          <img src="/assets/logo.png" alt="Adrian Obadiah Logo" className="logo-image" />
+          <span className="logo-slogan">Edz Digicraft</span>
+        </Link>
       </div>
       <div className="navbar-actions">
         <ThemeToggle />
