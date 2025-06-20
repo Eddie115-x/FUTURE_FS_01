@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   background: var(--secondary-bg);
-  border-radius: 8px;
+  border-radius: 12px; /* Increased border radius */
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  transition: all 0.3s ease;
   margin-bottom: 2rem;
+  height: 100%; /* Make all cards the same height */
 }
 
 .project-card:hover {
@@ -14,7 +15,7 @@
 }
 
 .project-image {
-  height: 200px;
+  height: 250px; /* Increased height for bigger images */
   overflow: hidden;
 }
 
@@ -30,57 +31,70 @@
 }
 
 .project-info {
-  padding: 1.5rem;
+  padding: 1.8rem; /* Increased padding */
+  flex-grow: 1; /* Allow info section to grow and fill available space */
+  display: flex;
+  flex-direction: column;
 }
 
 .project-info h3 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  margin-bottom: 1rem; /* Increased spacing */
+  font-size: 1.7rem; /* Larger font size */
+  font-weight: 400; /* Lighter font weight */
 }
 
 .project-info p {
   color: var(--color-text-primary); /* Black in light mode, white in dark mode */
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem; /* Increased spacing */
+  font-weight: 300; /* Lighter font weight */
+  line-height: 1.6; /* Improved line height for readability */
+  flex-grow: 1; /* Allow paragraph to grow and push links to bottom */
 }
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased spacing between links */
+  margin-top: auto; /* Push links to bottom of card */
 }
 
 .project-link, .github-link {
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 6px;
+  font-weight: 500; /* Medium font weight instead of bold */
   transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.01em;
+  display: inline-block;
 }
 
 .project-link {
-  background-color: var(--accent);
-  color: var(--primary-bg);
-}
-
-.github-link {
-  background-color: var(--primary-bg);
+  background-color: #2D2D2D; /* Professional dark gray color */
   color: white;
 }
 
-.project-link:hover, .github-link:hover {
-  opacity: 0.9;
+.github-link {
+  background-color: #F0F2F5; /* Light gray background */
+  color: #2D2D2D;
+  border: 1px solid #DADDE1; /* Subtle border */
 }
 
+.project-link:hover, .github-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove the row layout for desktop - we want consistent cards */
 @media (min-width: 768px) {
   .project-card {
-    flex-direction: row;
-    align-items: stretch;
-    height: 250px;
+    flex-direction: column; /* Keep consistent column layout */
+    height: 100%; /* Full height */
   }
   
   .project-image {
-    width: 40%;
-    height: auto;
+    width: 100%; /* Full width */
+    height: 250px; /* Fixed height */
   }
   
   .project-info {

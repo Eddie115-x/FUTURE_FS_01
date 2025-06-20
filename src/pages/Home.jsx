@@ -1,3 +1,5 @@
+import { FaBootstrap, FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
+import { SiExpress, SiFirebase, SiMongodb, SiMysql } from 'react-icons/si';
 import ProjectCard from '../components/ProjectCard';
 import '../pages/About.css';
 import '../pages/Projects.css';
@@ -34,55 +36,44 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="profile-container">
-          <img src="/assets/profile-pic.png" alt="Profile" className="profile-pic" />
-        </div>
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1>Hi, I'm Adrian Obadiah</h1>
-            <h2>Full Stack Developer</h2>
-            <p>I build responsive websites and web applications.</p>
-            <div className="hero-buttons">
-              <a href="#projects" className="btn primary-btn">View My Work</a>
-              <a href="#contact" className="btn secondary-btn">Contact Me</a>
+      {/* Personal Profile */}
+      <section className="Personal_Profile" id="home">
+        <div className="content-wrapper">
+          <div className="profile-container">
+            <img src="/assets/profile-pic.png" alt="Profile" className="profile-pic" />
+          </div>
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1>Hi, I'm Adrian Obadiah</h1>
+              <h2>Full Stack Developer</h2>
+              <p>I build responsive websites and web applications.</p>
             </div>
           </div>
-        </div>
-        {/* Scroll Down Icon */}
-        <div className="scroll-down text-center">
-          <a href="#about">
-            <img src="https://images.squarespace-cdn.com/content/v1/52574f61e4b03a8237e53088/1569695596518-RWV6J1VEKTAOMZA4BSX0/image-asset.png?format=100w" alt="Scroll Down" />
-          </a>
         </div>
       </section>
       
       {/* About Section */}
       <section className="about-section" id="about">
-        <div className="about-container" data-aos="fade-up">
-          <h2 className="about-title">About Me</h2>
-          <div className="about-content">
-            <img
-              src="/assets/about-pic.png"
-              alt="Profile"
-              className="about-image"
-            />
-            <div className="about-text">
-              <p>
-                My journey into tech wasn't straightforward. I started out as a pure science student in high school,
-                unsure of what path to follow after graduation. Everything changed after Year 12 when I discovered coding —
-                and I haven't looked back since. Today, I'm a third-year Software Engineering student at the University of the South Pacific in Laucala, Fiji.
-                Over the past two years, I've worked on various academic and personal projects, including mobile applications and websites.
-                Every challenge has been a learning curve — and this portfolio is proof that I'm moving in the right direction.
-              </p>
-              <a
-                href="/assets/cv doc.pdf"
-                download
-                className="download-cv-btn"
-              >
-                Download My CV
-              </a>
+        <div className="content-wrapper">
+          <div className="about-container" data-aos="fade-up">
+            <h2 className="about-title">My tech Home in the intert. </h2>
+            <div className="about-content">
+              <div className="about-text">
+                <p>
+                  My journey into tech wasn't straightforward. I started out as a pure science student in high school,
+                  unsure of what path to follow after graduation. Everything changed after Year 12 when I discovered coding —
+                  and I haven't looked back since. Today, I'm a third-year Software Engineering student at the University of the South Pacific in Laucala, Fiji.
+                  Over the past two years, I've worked on various academic and personal projects, including mobile applications and websites.
+                  Every challenge has been a learning curve — and this portfolio is proof that I'm moving in the right direction.
+                </p>
+                <a
+                  href="/assets/cv doc.pdf"
+                  download
+                  className="download-cv-btn"
+                >
+                  Download My CV
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -90,48 +81,53 @@ function Home() {
       
       {/* Skills Section */}
       <section className="skills">
-        <h2>My Skills</h2>
-        <div className="skills-container">
-          <div className="skill-category">
-            <h3>Frontend</h3>
-            <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>Bootstrap</li>
-            </ul>
-          </div>
-          
-          <div className="skill-category">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>Firebase</li>
-            </ul>
+        <div className="content-wrapper">
+          <h2 className="skills-title">My Tech Stack</h2>
+          <div className="skills-container">
+            <div className="skill-category">
+              <h3>Frontend</h3>
+              <ul>
+                <li><FaHtml5 className="tech-icon html-icon" /> HTML5</li>
+                <li><FaCss3Alt className="tech-icon css-icon" /> CSS3</li>
+                <li><FaReact className="tech-icon react-icon" /> React</li>
+                <li><FaBootstrap className="tech-icon bootstrap-icon" /> Bootstrap</li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3>Backend</h3>
+              <ul>
+                <li><FaNodeJs className="tech-icon nodejs-icon" /> Node.js</li>
+                <li><SiExpress className="tech-icon express-icon" /> Express</li>
+                <li><SiMongodb className="tech-icon mongodb-icon" /> MongoDB</li>
+                <li><SiFirebase className="tech-icon firebase-icon" /> Firebase</li>
+                <li><FaJs className="tech-icon js-icon" /> JavaScript</li>
+                <li><SiMysql className="tech-icon mysql-icon" /> MySQL</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
       
       {/* Projects Section */}
       <section className="projects-section" id="projects">
-        <div className="projects-container">
-          <h2>My Projects</h2>
-          <p className="projects-intro">Here's a collection of my recent work. Each project demonstrates different skills and technologies.</p>
-          
-          <div className="projects-grid">
-            {projects.map(project => (
-              <ProjectCard 
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                imageUrl={project.imageUrl}
-                projectUrl={project.projectUrl}
-                githubUrl={project.githubUrl}
-              />
-            ))}
+        <div className="content-wrapper">
+          <div className="projects-container">
+            <h2 className="projects-title">My Projects</h2>
+            <p className="projects-intro">Here's a collection of my recent work. Each project demonstrates different skills and technologies.</p>
+            
+            <div className="projects-grid">
+              {projects.map(project => (
+                <ProjectCard 
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  projectUrl={project.projectUrl}
+                  githubUrl={project.githubUrl}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
