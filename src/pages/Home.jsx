@@ -63,7 +63,7 @@ function Home() {
       <section className="about-section" id="about">
         <div className="content-wrapper">
           <div className="about-container" data-aos="fade-up">
-            <h2 className="about-title">My tech Home in the intert. </h2>
+            <h2 className="about-title">My tech Home in the internet. </h2>
             <div className="about-content">
               <div className="about-text-image-container">
                 <div className="about-text">
