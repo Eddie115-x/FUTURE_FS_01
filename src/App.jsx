@@ -11,7 +11,7 @@ import Home from './pages/Home';
 function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/FUTURE_FS_01">
         <div className="app">
           <NavBar />
           <main className="main-content">
