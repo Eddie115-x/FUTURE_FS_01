@@ -48,6 +48,7 @@
   color: var(--color-text-primary); /* Black in light mode, white in dark mode */
   margin-bottom: 2rem; /* Increased spacing */
   font-weight: 300; /* Lighter font weight */
+  text-align: justify;
   line-height: 1.6; /* Improved line height for readability */
   flex-grow: 1; /* Allow paragraph to grow and push links to bottom */
 }

@@ -47,6 +47,13 @@ function Home() {
               <h1>Hi, I'm Adrian Obadiah</h1>
               <h2>Full Stack Developer</h2>
               <p>I build responsive websites and web applications.</p>
+              <a
+                  href="/assets/cv doc.pdf"
+                  download
+                  className="download-cv-btn"
+                >
+                  Download My CV
+                </a>
             </div>
           </div>
         </div>
@@ -58,21 +65,19 @@ function Home() {
           <div className="about-container" data-aos="fade-up">
             <h2 className="about-title">My tech Home in the intert. </h2>
             <div className="about-content">
-              <div className="about-text">
-                <p>
-                  My journey into tech wasn't straightforward. I started out as a pure science student in high school,
-                  unsure of what path to follow after graduation. Everything changed after Year 12 when I discovered coding —
-                  and I haven't looked back since. Today, I'm a third-year Software Engineering student at the University of the South Pacific in Laucala, Fiji.
-                  Over the past two years, I've worked on various academic and personal projects, including mobile applications and websites.
-                  Every challenge has been a learning curve — and this portfolio is proof that I'm moving in the right direction.
-                </p>
-                <a
-                  href="/assets/cv doc.pdf"
-                  download
-                  className="download-cv-btn"
-                >
-                  Download My CV
-                </a>
+              <div className="about-text-image-container">
+                <div className="about-text">
+                  <p>
+                    My journey into tech wasn't straightforward. I started out as a pure science student in high school,
+                    unsure of what path to follow after graduation. Everything changed after Year 12 when I discovered coding —
+                    and I haven't looked back since. Today, I'm a third-year Software Engineering student at the University of the South Pacific in Laucala, Fiji.
+                    Over the past two years, I've worked on various academic and personal projects, including mobile applications and websites.
+                    Every challenge has been a learning curve — and this portfolio is proof that I'm moving in the right direction.
+                  </p>
+                </div>
+                <div className="about-profile-container">
+                  <img src="/assets/profile-pic.png" alt="Profile" className="about-profile-pic" />
+                </div>
               </div>
             </div>
           </div>
@@ -103,6 +108,15 @@ function Home() {
                 <li><SiFirebase className="tech-icon firebase-icon" /> Firebase</li>
                 <li><FaJs className="tech-icon js-icon" /> JavaScript</li>
                 <li><SiMysql className="tech-icon mysql-icon" /> MySQL</li>
+              </ul>
+            </div>
+            
+            <div className="skill-category">
+              <h3>Tools</h3>
+              <ul>
+                <li>GitHub</li>
+                <li>Visual Studio</li>
+                <li>IntelliJ IDEA</li>
               </ul>
             </div>
           </div>
