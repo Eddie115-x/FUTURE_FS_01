@@ -1,0 +1,30 @@
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.blog-intro {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.blog-posts-placeholder {
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.blog-posts-placeholder h2 {
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.blog-posts-placeholder p {
+  color: var(--color-text-secondary);
+}

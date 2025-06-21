@@ -1,0 +1,41 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  transition: all 0.2s ease;
+  margin-left: 1rem;
+  position: relative;
+  outline: none;
+  z-index: 1500; /* High z-index to ensure it's above content but below hamburger */
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-muted);
+}
+
+.theme-toggle:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-text-primary); /* Black in light mode, white in dark */
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(12deg);
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    margin-right: 40px;
+  }
+}
