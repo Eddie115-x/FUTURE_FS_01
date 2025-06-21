@@ -12,7 +12,7 @@ function Home() {
       id: 1,
       title: 'E-Portfolio Website',
       description: 'A fully responsive personal e-portfolio website built with React, css, html, java. Features include .',
-      imageUrl: '/assets/project-1.png',
+      imageUrl: process.env.PUBLIC_URL + '/assets/project-1.png',
       projectUrl: 'https://project1.example.com',
       githubUrl: 'https://github.com/yourusername/project1'
     },
@@ -20,7 +20,7 @@ function Home() {
       id: 2,
       title: 'Weather App',
       description: 'A weather application that fetches real-time weather data from OpenWeatherMap API. Users can search for weather information by city name or use geolocation to get local weather.',
-      imageUrl: '/assets/project-2.png',
+      imageUrl: process.env.PUBLIC_URL + '/assets/project-2.png',
       projectUrl: 'https://project2.example.com',
       githubUrl: 'https://github.com/yourusername/project2'
     },
@@ -28,7 +28,7 @@ function Home() {
       id: 3,
       title: 'Task Management App',
       description: 'A task management application built with React and Node.js. Features include task creation, categorization, due dates, and reminders.',
-      imageUrl: '/assets/project-3.png',
+      imageUrl: process.env.PUBLIC_URL + '/assets/project-3.png',
       projectUrl: 'https://project3.example.com',
       githubUrl: 'https://github.com/yourusername/project3'
     }
@@ -40,7 +40,7 @@ function Home() {
       <section className="Personal_Profile" id="home">
         <div className="content-wrapper">
           <div className="profile-container">
-            <img src="/assets/profile-pic.png" alt="Profile" className="profile-pic" />
+            <img src={process.env.PUBLIC_URL + "/assets/profile-pic.png"} alt="Profile" className="profile-pic" />
           </div>
           <div className="hero-content">
             <div className="hero-text">
@@ -48,7 +48,7 @@ function Home() {
               <h2>Full Stack Developer</h2>
               <p>I build responsive websites and web applications.</p>
               <a
-                  href="/assets/cv doc.pdf"
+                  href={process.env.PUBLIC_URL + "/assets/cv doc.pdf"}
                   download
                   className="download-cv-btn"
                 >
@@ -76,7 +76,7 @@ function Home() {
                   </p>
                 </div>
                 <div className="about-profile-container">
-                  <img src="/assets/profile-pic.png" alt="Profile" className="about-profile-pic" />
+                  <img src={process.env.PUBLIC_URL + "/assets/profile-pic.png"} alt="Profile" className="about-profile-pic" />
                 </div>
               </div>
             </div>

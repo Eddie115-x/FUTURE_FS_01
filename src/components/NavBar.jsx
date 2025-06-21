@@ -23,7 +23,7 @@ function NavBar() {
       <div className="navbar-inner">
         <div className="navbar-logo">
           <Link to="/" className="logo-link">
-            <img src="/assets/logo.png" alt="Adrian Obadiah Logo" className="logo-image" />
+            <img src={process.env.PUBLIC_URL + "/assets/logo.png"} alt="Adrian Obadiah Logo" className="logo-image" />
             <span className="logo-slogan">ADRIAN OBADIAH</span>
           </Link>
         </div>

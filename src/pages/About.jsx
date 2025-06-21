@@ -7,7 +7,7 @@ function About() {
         <h1 className="about-title">About Me</h1>
         <div className="about-content">
           <img
-            src="/assets/about-pic.png"
+            src={process.env.PUBLIC_URL + "/assets/about-pic.png"}
             alt="Profile"
             className="about-image"
           />
@@ -20,7 +20,7 @@ function About() {
               Every challenge has been a learning curve — and this portfolio is proof that I’m moving in the right direction.
             </p>
             <a
-              href="/assets/cv doc.pdf"
+              href={process.env.PUBLIC_URL + "/assets/cv doc.pdf"}
               download
               className="download-cv-btn"
             >
