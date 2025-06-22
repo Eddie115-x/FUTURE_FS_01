@@ -1,7 +1,6 @@
 {  "name": "FUTURE_FS_01",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eddie115-x.github.io/FUTURE_FS_01",
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
@@ -16,8 +15,6 @@
     "web-vitals": "^2.1.4"
   },  "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
