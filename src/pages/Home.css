@@ -69,7 +69,7 @@
   transition: all 0.3s ease;
 }
 
-.hero-content {
+.personalprofile-content {
   display: flex;
   flex: 1;
   justify-content: center; /* Center on mobile */
@@ -79,7 +79,7 @@
   order: 2; /* Set order to 2 for mobile (stacking) */
 }
 
-.hero-text {
+.personalprofile-text {
   flex: 1;
   max-width: 600px;
   text-align: center; /* Center text on mobile */
@@ -93,13 +93,13 @@
     justify-content: flex-start;
   }
   
-  .hero-content {
-    order: 2; /* Keep hero content on the right */
+  .personalprofile-content {
+    order: 2; /* Keep personalprofile content on the right */
     justify-content: flex-start;
     padding-left: 2rem;
   }
   
-  .hero-text {
+  .personalprofile-text {
     text-align: left;
   }
 }
@@ -124,7 +124,7 @@
   text-align: justify;
 }
 
-.hero-buttons {
+.personalprofile-buttons {
   display: flex;
   gap: 1rem;
 }
@@ -518,8 +518,8 @@ section p {
     order: 1; /* Keep profile pic on the left */
   }
   
-  .hero-content {
-    order: 2; /* Keep hero content on the right */
+  .personalprofile-content {
+    order: 2; /* Keep personalprofile content on the right */
   }
   
   .profile-pic {
@@ -528,7 +528,7 @@ section p {
     aspect-ratio: 1/1;
   }
   
-  .hero-content {
+  .personalprofile-content {
     padding-left: 2rem;
     flex: 0 0 50%;
   }
@@ -564,8 +564,8 @@ section p {
     order: 1; /* Profile pic first on mobile */
   }
   
-  .hero-content {
-    order: 2; /* Hero content second on mobile */
+  .personalprofile-content {
+    order: 2; /* Personal Profile content second on mobile */
     padding-left: 0;
   }
   
@@ -631,8 +631,8 @@ section p {
     order: 1; /* Ensure profile pic stays on the left */
   }
   
-  .hero-content {
-    order: 2; /* Ensure hero content stays on the right */
+  .personalprofile-content {
+    order: 2; /* Ensure personalprofile content stays on the right */
   }
   
   .profile-pic {
@@ -641,7 +641,7 @@ section p {
     aspect-ratio: 1/1; /* Keep square aspect ratio */
   }
   
-  .hero-content {
+  .personalprofile-content {
     flex: 0 0 48%;
   }
   
