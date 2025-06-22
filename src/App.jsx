@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, HashRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -10,8 +10,7 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router basename="/FUTURE_FS_01">
+    <ThemeProvider>      <Router>
         <div className="app">
           <NavBar />
           <main className="main-content">
