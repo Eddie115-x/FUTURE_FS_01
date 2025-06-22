@@ -1,5 +1,8 @@
 # dependencies
 /node_modules
+/node_modules/
+node_modules/
+node_modules/.cache/
 /.pnp
 .pnp.js
 
@@ -8,7 +11,8 @@
 
 # production
 /build
-
+/build/*
+!/build/asset-manifest.json
 # misc
 .DS_Store
 .env.local
