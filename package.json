@@ -2,7 +2,7 @@
   "name": "FUTURE_FS_01",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eddie115-x.github.io/FUTURE_FS_01",
+  "homepage": "https://Eddie115-x.github.io/FUTURE_FS_01",
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
