@@ -87,7 +87,7 @@ function Home() {
       {/* Skills Section */}
       <section className="skills">
         <div className="content-wrapper">
-          <h2 className="skills-title">My Tech Stack</h2>
+          <h2 className="skills-title">Tools I'm proficient in</h2>
           <div className="skills-container">
             <div className="skill-category">
               <h3>Frontend</h3>
