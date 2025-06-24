@@ -7,7 +7,8 @@ function Footer() {
         <div className="copyright">
           <p>&copy; {new Date().getFullYear()} Adrian Oxley Obadiah. All rights reserved.</p>
         </div>
-        <div className="social-links socials">          <a href="https://github.com/Eddie115-x" target="_blank" rel="noopener noreferrer">
+        <div className="social-links socials">          
+          <a href="https://github.com/Eddie115-x" target="_blank" rel="noopener noreferrer">
             <img src={process.env.PUBLIC_URL + "/assets/github.png"} alt="GitHub" className="footer-social-icon" />
           </a>
           <a href="https://www.linkedin.com/in/adrian-obadiah-5682822ba/" target="_blank" rel="noopener noreferrer">

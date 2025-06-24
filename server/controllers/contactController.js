@@ -1,36 +1,33 @@
-const nodemailer = require('nodemailer');
-const Contact = require('../models/Contact');
+const supabase = require('../config/supabase');
+const { Resend } = require('resend');
 
-// Create a transporter
-const transporter = nodemailer.createTransport({
-  // Configure your email service provider here
-  // For example, if using Gmail:
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// Configure Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Submit contact form
 const submitContactForm = async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
     
-    // Save message to database
-    const newContact = new Contact({
-      name,
-      email,
-      subject,
-      message,
-    });
+    // Save message to Supabase database
+    const { data, error } = await supabase
+      .from('contacts')
+      .insert([
+        { 
+          name, 
+          email, 
+          subject, 
+          message,
+          status: 'unread'
+        }
+      ]);
+      
+    if (error) throw error;
     
-    await newContact.save();
-    
-    // Send email notification
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL, // Your email to receive notifications
+    // Send email notification to admin
+    await resend.emails.send({
+      from: process.env.FROM_EMAIL,
+      to: process.env.ADMIN_EMAIL,
       subject: `New Contact Form: ${subject}`,
       html: `
         <h3>New message from ${name}</h3>
@@ -38,14 +35,12 @@ const submitContactForm = async (req, res) => {
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
-      `,
-    };
-    
-    await transporter.sendMail(mailOptions);
+      `
+    });
     
     // Send confirmation email to sender
-    const confirmationMailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: process.env.FROM_EMAIL,
       to: email,
       subject: 'Thank you for contacting me!',
       html: `
@@ -54,10 +49,8 @@ const submitContactForm = async (req, res) => {
         <p>Your message:</p>
         <p><em>${message}</em></p>
         <p>Best regards,<br>Adrian</p>
-      `,
-    };
-    
-    await transporter.sendMail(confirmationMailOptions);
+      `
+    });
     
     res.status(201).json({ 
       success: true, 
@@ -75,7 +68,13 @@ const submitContactForm = async (req, res) => {
 // Get all contact messages (admin only)
 const getContactMessages = async (req, res) => {
   try {
-    const messages = await Contact.find({}).sort({ createdAt: -1 });
+    const { data: messages, error } = await supabase
+      .from('contacts')
+      .select('*')
+      .order('created_at', { ascending: false });
+      
+    if (error) throw error;
+    
     res.status(200).json(messages);
   } catch (error) {
     console.error('Error fetching contact messages:', error);
@@ -89,15 +88,21 @@ const updateMessageStatus = async (req, res) => {
     const { id } = req.params;
     const { read, responded } = req.body;
     
-    const message = await Contact.findById(id);
-    if (!message) {
+    const updateData = {};
+    if (read !== undefined) updateData.read = read;
+    if (responded !== undefined) updateData.responded = responded;
+    
+    const { data, error } = await supabase
+      .from('contacts')
+      .update(updateData)
+      .eq('id', id)
+      .select();
+      
+    if (error) throw error;
+    
+    if (data.length === 0) {
       return res.status(404).json({ message: 'Message not found' });
     }
-    
-    if (read !== undefined) message.read = read;
-    if (responded !== undefined) message.responded = responded;
-    
-    await message.save();
     
     res.status(200).json({ message: 'Status updated successfully' });
   } catch (error) {
@@ -110,7 +115,14 @@ const updateMessageStatus = async (req, res) => {
 const deleteMessage = async (req, res) => {
   try {
     const { id } = req.params;
-    await Contact.findByIdAndDelete(id);
+    
+    const { error } = await supabase
+      .from('contacts')
+      .delete()
+      .eq('id', id);
+      
+    if (error) throw error;
+    
     res.status(200).json({ message: 'Message deleted successfully' });
   } catch (error) {
     console.error('Error deleting message:', error);

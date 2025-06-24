@@ -1,12 +1,1 @@
-{"name":"FUTURE_FS_01","version":"0.1.0","private":true,"dependencies":{"@supabase/supabase-js":"^2.50.0","@vercel/speed-insights":"^1.2.0","bcryptjs":"^2.4.3","body-parser":"^2.2.0","cors":"^2.8.5","dotenv":"^16.3.1","express":"^5.1.0","jsonwebtoken":"^9.0.2","mongoose":"^8.16.0","multer":"^1.4.5-lts.1","nodemailer":"^7.0.3","react":"^18.2.0","react-dom":"^18.2.0","react-icons":"^5.5.0","react-router-dom":"^6.20.0","react-scripts":"^5.0.1","slugify":"^1.6.6","swiper":"^11.2.8","web-vitals":"^2.1.4"},"scripts":{
-  "client": "cross-env PORT=3000 react-scripts start",
-  "server": "nodemon server/server.js",
-  "dev": "concurrently \"npm run server\" \"npm run client\"",
-  "start": "node server/server.js",
-  "start:frontend": "cross-env PORT=3000 react-scripts start",
-  "start:backend": "node server/server.js",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "create-admin": "node server/adminCreateUser.js"
-},"eslintConfig":{"extends":["react-app"]},"browserslist":{"production":[">0.2%","not dead","not op_mini all"],"development":["last 1 chrome version","last 1 firefox version","last 1 safari version"]},"devDependencies":{"concurrently":"^8.2.2","cross-env":"^7.0.3","gh-pages":"^6.3.0","http-proxy-middleware":"^2.0.6","nodemon":"^3.0.1"}}
+{"name":"FUTURE_FS_01","version":"0.1.0","private":true,"dependencies":{"@sendgrid/mail":"^8.1.5","@supabase/supabase-js":"^2.50.0","@vercel/speed-insights":"^1.2.0","bcryptjs":"^2.4.3","body-parser":"^2.2.0","cors":"^2.8.5","dotenv":"^16.3.1","express":"^5.1.0","jsonwebtoken":"^9.0.2","mongoose":"^8.16.0","multer":"^1.4.5-lts.1","nodemailer":"^7.0.3","react":"^18.2.0","react-dom":"^18.2.0","react-icons":"^5.5.0","react-router-dom":"^6.20.0","react-scripts":"^5.0.1","resend":"^4.6.0","slugify":"^1.6.6","swiper":"^11.2.8","web-vitals":"^2.1.4"},"scripts":{"client":"cross-env PORT=3000 react-scripts start","server":"nodemon server/server.js","dev":"concurrently \"npm run server\" \"npm run client\"","start":"node server/server.js","start:frontend":"cross-env PORT=3000 react-scripts start","start:backend":"node server/server.js","build":"react-scripts build","test":"react-scripts test","eject":"react-scripts eject","create-admin":"node server/adminCreateUser.js"},"eslintConfig":{"extends":["react-app"]},"browserslist":{"production":[">0.2%","not dead","not op_mini all"],"development":["last 1 chrome version","last 1 firefox version","last 1 safari version"]},"devDependencies":{"concurrently":"^8.2.2","cross-env":"^7.0.3","gh-pages":"^6.3.0","http-proxy-middleware":"^2.0.6","nodemon":"^3.0.1"}}
