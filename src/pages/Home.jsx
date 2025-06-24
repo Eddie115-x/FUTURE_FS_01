@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
 import { SiExpress, SiFirebase, SiMysql } from 'react-icons/si';
 import ProjectCard from '../components/ProjectCard';
-import supabase from '../supabase';
 import '../pages/About.css';
 import '../pages/Projects.css';
+import supabase from '../supabase';
 import './Home.css';
 
 function Home() {
