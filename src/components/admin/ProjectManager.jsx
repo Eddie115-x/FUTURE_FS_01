@@ -284,7 +284,7 @@ const ProjectManager = () => {
               name="github_url"
               value={currentProject.github_url}
               onChange={handleInputChange}
-              placeholder="https://github.com/username/repo"
+              placeholder="https://github.com/Eddie115-x/repo"
             />
           </div>
         </div>

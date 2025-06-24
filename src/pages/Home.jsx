@@ -66,7 +66,7 @@ function Home() {
             description: 'A fully responsive personal e-portfolio website built with React, css, html, java.',
             imageUrl: process.env.PUBLIC_URL + '/assets/project-1.png',
             projectUrl: 'https://project1.example.com',
-            githubUrl: 'https://github.com/yourusername/project1'
+            githubUrl: 'https://github.com/Eddie115-x/project1'
           }
         ]);
       } finally {
