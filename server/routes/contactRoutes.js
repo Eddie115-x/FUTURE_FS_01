@@ -7,6 +7,13 @@ const router = express.Router();
 // Public routes
 router.post('/', submitContactForm);
 
+// Handle OPTIONS requests (for CORS preflight)
+router.options('/', (req, res) => {
+  res.header('Access-Control-Allow-Methods', 'POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.sendStatus(200);
+});
+
 // Admin routes
 router.get('/', protect, admin, getContactMessages);
 router.put('/:id', protect, admin, updateMessageStatus);

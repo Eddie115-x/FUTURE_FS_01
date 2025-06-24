@@ -21,11 +21,12 @@ function Contact() {
       ...prevState,
       [name]: value
     }));
-  };
-    const handleSubmit = async (e) => {
+  };    const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
+      console.log('Submitting form data:', formData);
+      
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -34,7 +35,14 @@ function Contact() {
         body: JSON.stringify(formData),
       });
       
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+      }
+      
       const data = await response.json();
+      console.log('Response data:', data);
       
       if (response.ok) {
         setFormStatus({
@@ -56,9 +64,19 @@ function Contact() {
           error: true, 
           message: data.message || 'An error occurred. Please try again.'
         });
-      }
-    } catch (error) {
+      }    } catch (error) {
       console.error('Error submitting form:', error);
+      
+      // Check if server is unreachable
+      if (!window.navigator.onLine || error.message.includes('Failed to fetch')) {
+        setFormStatus({
+          submitted: true,
+          error: true,
+          message: 'Cannot connect to server. Please check your internet connection or try again later.'
+        });
+        return;
+      }
+      
       setFormStatus({ 
         submitted: true, 
         error: true, 
