@@ -29,11 +29,7 @@
 }
 
 .logo-image {
-  height: 60px;  /* Increased size */
-  width: auto;
-  border-radius: 0;  /* Square shape */
-  object-fit: contain; /* Maintain aspect ratio without cropping */
-  transition: transform 0.3s ease;
+  display: none; /* Hide the logo image */
 }
 
 .navbar-logo {
@@ -44,11 +40,11 @@
 }
 
 .logo-slogan {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin-left: 12px;
-  letter-spacing: 0.05rem;
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: 0.15rem;
   color: var(--color-text-primary);
+  margin-left: 0; /* No margin needed since there's no logo */
 }
 
 .navbar-links {
@@ -61,7 +57,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 900; /* High z-index but below navbar-links and hamburger */
   animation: fadeIn 0.2s ease-in-out;
@@ -119,6 +115,74 @@
   margin-right: 2rem; /* Added from new style */
   z-index: 1500; /* High z-index for navbar actions */
   position: relative;
+}
+
+.user-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-primary);
+  transition: color 0.2s;
+}
+.user-icon-btn:hover {
+  color: var(--color-accent);
+}
+
+.login-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.login-modal {
+  background: var(--color-surface, #fff);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-modal h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.login-modal input {
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.login-modal button[type="submit"] {
+  background: var(--color-accent, #007bff);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.login-modal .login-cancel {
+  background: none;
+  color: var(--color-text-secondary, #888);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.login-error {
+  color: #d32f2f;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

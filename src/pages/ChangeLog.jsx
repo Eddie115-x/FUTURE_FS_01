@@ -29,7 +29,7 @@ const ChangeLog = () => {
                   <li>React 18 with React Router DOM for page navigation</li>
                   <li>CSS custom properties for theming (light/dark mode)</li>
                   <li>Component-based architecture for maintainability</li>
-                  <li>GitHub Pages deployment with proper asset path handling</li>
+                  <li>Vercel deployment</li>
                 </ul>
               </li>
               <li><strong>Key Features:</strong>
@@ -46,7 +46,7 @@ const ChangeLog = () => {
                   <li>Personal Profile section with profile and introduction</li>
                   <li>About section with bio and downloadable CV</li>
                   <li>Tech Stack visualization with organized categories (Frontend, Backend, Tools)</li>
-                  <li>Projects showcase with interactive cards</li>
+                  <li>Projects showcase</li>
                   <li>Blog section (placeholder for future content)</li>
                   <li>Contact information with form and social links</li>
                 </ul>

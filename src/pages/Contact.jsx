@@ -22,29 +22,49 @@ function Contact() {
       [name]: value
     }));
   };
-  
-  const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // In a real application, you would send this data to your backend
-    // For now, we'll just simulate a successful submission
-    
-    setFormStatus({
-      submitted: true,
-      error: false,
-      message: 'Thank you for your message! I will get back to you soon.'
-    });
-    
-    // Reset form after successful submission
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    
-    // In a real app, you would handle errors too
-    // if error: setFormStatus({ submitted: true, error: true, message: 'An error occurred. Please try again.' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: 'Thank you for your message! I will get back to you soon.'
+        });
+        
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setFormStatus({ 
+          submitted: true, 
+          error: true, 
+          message: data.message || 'An error occurred. Please try again.'
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus({ 
+        submitted: true, 
+        error: true, 
+        message: 'Network error. Please check your connection and try again.'
+      });
+    }
   };
 
   return (

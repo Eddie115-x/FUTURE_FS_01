@@ -100,12 +100,12 @@
   }
   
   .personalprofile-text {
-    text-align: left;
+    text-align: right;
   }
 }
 
 .Personal_Profile h1 {
-  font-size: 5rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
