@@ -207,24 +207,116 @@ section p {
   border-radius: 3px;
 }
 
-.skills-container {
+.tech-icons-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create exactly 3 equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 2rem;
   width: 100%;
-  margin-top: 1rem; /* Add some spacing between title and grid */
+  margin-top: 2rem;
+  justify-content: center;
 }
+
+.tech-icon-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.tech-icon-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon-item::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: var(--secondary-bg);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.tech-icon-item:hover::after {
+  opacity: 1;
+}
+
+.tech-icon {
+  font-size: 3.5rem;
+  color: var(--accent);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tech-icon-item:hover .tech-icon {
+  transform: scale(1.15);
+}
+
+/* Icon-specific colors */
+.html-icon { color: #E44D26; }
+.css-icon { color: #1572B6; }
+.js-icon { color: #F7DF1E; }
+.react-icon { color: #61DAFB; }
+.supabase-icon { color: #3ECF8E; }
+.java-icon { color: #007396; }
+.mysql-icon { color: #4479A1; }
+.cpp-icon { color: #00599C; }
+.dotnet-icon { color: #512BD4; }
+.spring-icon { color: #6DB33F; }
+.python-icon { color: #3776AB; }
 
 /* Responsive styles for skills section */
 @media (max-width: 992px) {
-  .skills-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  .tech-icons-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .tech-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-icons-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .tech-icon-item {
+    padding: 1.2rem;
+  }
+  
+  .tech-icon {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 576px) {
-  .skills-container {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+  .tech-icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .tech-icon-item {
+    padding: 1rem;
+  }
+  
+  .tech-icon {
+    font-size: 2.2rem;
   }
 }
 

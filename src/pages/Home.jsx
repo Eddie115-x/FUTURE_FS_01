@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FaCss3Alt, FaHtml5, FaJs, FaNodeJs, FaReact } from 'react-icons/fa';
-import { SiExpress, SiFirebase, SiMysql } from 'react-icons/si';
+import { FaCss3Alt, FaHtml5, FaJava, FaPython, FaReact } from 'react-icons/fa';
+import { SiCplusplus, SiDotnet, SiMysql, SiSpringboot, SiSupabase } from 'react-icons/si';
+import { TbBrandJavascript } from 'react-icons/tb';
 import ProjectCard from '../components/ProjectCard';
 import '../pages/About.css';
 import '../pages/Projects.css';
@@ -126,30 +127,43 @@ function Home() {
           </div>
         </div>
       </section>
-      
-      {/* Skills Section */}
+        {/* Skills Section */}
       <section className="skills">
         <div className="content-wrapper">
-          <h2 className="skills-title">Tools I'm proficient in</h2>
-          <div className="skills-container">
-            <div className="skill-category">
-              <h3>Frontend</h3>
-              <ul>
-                <li><FaHtml5 className="tech-icon html-icon" /> HTML5</li>
-                <li><FaCss3Alt className="tech-icon css-icon" /> CSS3</li>
-                <li><FaReact className="tech-icon react-icon" /> React</li>
-              </ul>
+          <h2 className="skills-title">Current Tech Stack</h2>
+          <div className="tech-icons-grid">
+            <div className="tech-icon-item" title="HTML5">
+              <FaHtml5 className="tech-icon html-icon" />
             </div>
-            
-            <div className="skill-category">
-              <h3>Backend</h3>
-              <ul>
-                <li><FaNodeJs className="tech-icon nodejs-icon" /> Node.js</li>
-                <li><SiExpress className="tech-icon express-icon" /> Express</li>
-                <li><SiFirebase className="tech-icon firebase-icon" /> Firebase</li>
-                <li><FaJs className="tech-icon js-icon" /> JavaScript</li>
-                <li><SiMysql className="tech-icon mysql-icon" /> MySQL</li>
-              </ul>
+            <div className="tech-icon-item" title="CSS3">
+              <FaCss3Alt className="tech-icon css-icon" />
+            </div>
+            <div className="tech-icon-item" title="JavaScript">
+              <TbBrandJavascript className="tech-icon js-icon" />
+            </div>
+            <div className="tech-icon-item" title="React">
+              <FaReact className="tech-icon react-icon" />
+            </div>
+            <div className="tech-icon-item" title="Supabase">
+              <SiSupabase className="tech-icon supabase-icon" />
+            </div>
+            <div className="tech-icon-item" title="Java">
+              <FaJava className="tech-icon java-icon" />
+            </div>
+            <div className="tech-icon-item" title="MySQL">
+              <SiMysql className="tech-icon mysql-icon" />
+            </div>
+            <div className="tech-icon-item" title="C++">
+              <SiCplusplus className="tech-icon cpp-icon" />
+            </div>
+            <div className="tech-icon-item" title=".NET">
+              <SiDotnet className="tech-icon dotnet-icon" />
+            </div>
+            <div className="tech-icon-item" title="Spring Boot">
+              <SiSpringboot className="tech-icon spring-icon" />
+            </div>
+            <div className="tech-icon-item" title="Python">
+              <FaPython className="tech-icon python-icon" />
             </div>
           </div>
         </div>
