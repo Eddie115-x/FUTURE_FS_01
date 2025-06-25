@@ -176,23 +176,26 @@ section p {
 
 /* Skills section */
 .skills {
-  padding: 4rem 0;
+  padding: 5rem 0;
   width: 100%;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg, #f8f9fa);
+  margin: 1rem 0 3rem 0;
+  scroll-margin-top: 80px;
 }
 
 .skills-title {
   text-align: center;
   margin-bottom: 3rem;
-  font-weight: 400;
+  font-weight: 600;
   position: relative;
-  padding-bottom: 1.5rem; /* Increased padding */
-  font-size: 2.8rem;
+  padding-bottom: 1.5rem;
+  font-size: 2.5rem;
   letter-spacing: 0.02em;
   width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  color: var(--text-primary, #2D2D2D);
 }
 
 .skills-title::after {
@@ -201,16 +204,23 @@ section p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 3px;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent, #3ECF8E);
+  border-radius: 4px;
+}
+
+.tech-icons-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .tech-icons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
   width: 100%;
   margin-top: 2rem;
   justify-content: center;
@@ -220,18 +230,19 @@ section p {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
-  background-color: var(--secondary-bg);
+  padding: 2rem;
+  background-color: var(--secondary-bg, #ffffff);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
+  cursor: pointer;
 }
 
 .tech-icon-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .tech-icon-item::after {
@@ -240,8 +251,9 @@ section p {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 5px 10px;
-  background-color: var(--secondary-bg);
+  padding: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   border-radius: 4px;
   font-size: 0.8rem;
   opacity: 0;
@@ -249,6 +261,7 @@ section p {
   pointer-events: none;
   white-space: nowrap;
   z-index: 10;
+  font-weight: 500;
 }
 
 .tech-icon-item:hover::after {
@@ -257,12 +270,12 @@ section p {
 
 .tech-icon {
   font-size: 3.5rem;
-  color: var(--accent);
   transition: transform 0.3s ease-in-out;
+  display: block;
 }
 
 .tech-icon-item:hover .tech-icon {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 /* Icon-specific colors */
@@ -279,10 +292,16 @@ section p {
 .python-icon { color: #3776AB; }
 
 /* Responsive styles for skills section */
-@media (max-width: 992px) {
+@media (min-width: 1200px) {
+  .tech-icons-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1199px) {
   .tech-icons-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 25px;
   }
   
   .tech-icon {
@@ -293,7 +312,22 @@ section p {
 @media (max-width: 768px) {
   .tech-icons-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
+    gap: 20px;
+  }
+  
+  .tech-icon-item {
+    padding: 1.5rem;
+  }
+  
+  .tech-icon {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tech-icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   
   .tech-icon-item {
@@ -302,21 +336,6 @@ section p {
   
   .tech-icon {
     font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .tech-icons-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .tech-icon-item {
-    padding: 1rem;
-  }
-  
-  .tech-icon {
-    font-size: 2.2rem;
   }
 }
 

@@ -126,44 +126,45 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-        {/* Skills Section */}
-      <section className="skills">
+      </section>      {/* Skills Section */}
+      <section className="skills" id="skills">
         <div className="content-wrapper">
           <h2 className="skills-title">Current Tech Stack</h2>
-          <div className="tech-icons-grid">
-            <div className="tech-icon-item" title="HTML5">
-              <FaHtml5 className="tech-icon html-icon" />
-            </div>
-            <div className="tech-icon-item" title="CSS3">
-              <FaCss3Alt className="tech-icon css-icon" />
-            </div>
-            <div className="tech-icon-item" title="JavaScript">
-              <TbBrandJavascript className="tech-icon js-icon" />
-            </div>
-            <div className="tech-icon-item" title="React">
-              <FaReact className="tech-icon react-icon" />
-            </div>
-            <div className="tech-icon-item" title="Supabase">
-              <SiSupabase className="tech-icon supabase-icon" />
-            </div>
-            <div className="tech-icon-item" title="Java">
-              <FaJava className="tech-icon java-icon" />
-            </div>
-            <div className="tech-icon-item" title="MySQL">
-              <SiMysql className="tech-icon mysql-icon" />
-            </div>
-            <div className="tech-icon-item" title="C++">
-              <SiCplusplus className="tech-icon cpp-icon" />
-            </div>
-            <div className="tech-icon-item" title=".NET">
-              <SiDotnet className="tech-icon dotnet-icon" />
-            </div>
-            <div className="tech-icon-item" title="Spring Boot">
-              <SiSpringboot className="tech-icon spring-icon" />
-            </div>
-            <div className="tech-icon-item" title="Python">
-              <FaPython className="tech-icon python-icon" />
+          <div className="tech-icons-container">
+            <div className="tech-icons-grid">
+              <div className="tech-icon-item" title="HTML5">
+                <FaHtml5 className="tech-icon html-icon" aria-label="HTML5" />
+              </div>
+              <div className="tech-icon-item" title="CSS3">
+                <FaCss3Alt className="tech-icon css-icon" aria-label="CSS3" />
+              </div>
+              <div className="tech-icon-item" title="JavaScript">
+                <TbBrandJavascript className="tech-icon js-icon" aria-label="JavaScript" />
+              </div>
+              <div className="tech-icon-item" title="React">
+                <FaReact className="tech-icon react-icon" aria-label="React" />
+              </div>
+              <div className="tech-icon-item" title="Supabase">
+                <SiSupabase className="tech-icon supabase-icon" aria-label="Supabase" />
+              </div>
+              <div className="tech-icon-item" title="Java">
+                <FaJava className="tech-icon java-icon" aria-label="Java" />
+              </div>
+              <div className="tech-icon-item" title="MySQL">
+                <SiMysql className="tech-icon mysql-icon" aria-label="MySQL" />
+              </div>
+              <div className="tech-icon-item" title="C++">
+                <SiCplusplus className="tech-icon cpp-icon" aria-label="C++" />
+              </div>
+              <div className="tech-icon-item" title=".NET">
+                <SiDotnet className="tech-icon dotnet-icon" aria-label=".NET" />
+              </div>
+              <div className="tech-icon-item" title="Spring Boot">
+                <SiSpringboot className="tech-icon spring-icon" aria-label="Spring Boot" />
+              </div>
+              <div className="tech-icon-item" title="Python">
+                <FaPython className="tech-icon python-icon" aria-label="Python" />
+              </div>
             </div>
           </div>
         </div>
